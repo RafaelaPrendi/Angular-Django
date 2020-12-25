@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'agent',
-    'order',
-    'product',
+    'agent.apps.AgentConfig',
+    'order.apps.OrderConfig',
+    'product.apps.ProductConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    )
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
 }
