@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e924644-1d81-47c7-9af2-9b8b28f48a51" name="Default Changelist" comment="" />
+    <list default="true" id="2e924644-1d81-47c7-9af2-9b8b28f48a51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1m9KluLuOp77ths4FyhHhsEXp5L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -16,8 +31,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\Zbook 15\Web Dev projects\order_frontend\order-frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -29,10 +51,22 @@
       <option name="presentableId" value="Default" />
       <updated>1608900520735</updated>
       <workItem from="1608900521844" duration="589000" />
+      <workItem from="1608901134662" duration="5843000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
