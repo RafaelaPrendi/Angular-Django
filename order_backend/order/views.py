@@ -3,13 +3,13 @@ from rest_framework import viewsets
 from rest_framework import generics
 from .serializers import CounterSerializer, OrderSerializer, OrderUnitSerializer
 from .models import *
-
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class OrderList(generics.ListCreateAPIView):
     queryset = itw_order.objects.all()
     serializer_class = OrderSerializer
-
+    permission_classes = [IsAuthenticated]
 
 class OrderDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = itw_order.objects.all()
