@@ -12,14 +12,14 @@ class itw_counter(models.Model):
 
 
 class itw_order(models.Model):
-    code = models.IntegerField(validators=[MaxLengthValidator(10)])
-    code_year = models.IntegerField(validators=[MaxLengthValidator(10)])
+    code = models.IntegerField()
+    code_year = models.IntegerField()
     date_register = models.DateField()
     # customer_id  one customer many orders
     # one to many relationship -> foreign key
     customer_id = models.ForeignKey(itw_customer, on_delete=models.CASCADE)
     # creator_id one user many orders
-    creator_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    creator_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     product = models.ManyToManyField(itw_product, through='itw_order_unit')
 
     class Meta:

@@ -6,7 +6,9 @@ from rest_framework import status
 from rest_framework import generics
 from .serializers import UserSerializer, GroupSerializer, CustomerSerializer
 from .models import itw_customer
-
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework.permissions import AllowAny
+from .serializers import MyTokenObtainPairSerializer
 
 # Create your views here.
 
@@ -38,3 +40,7 @@ class CustomerList(generics.ListCreateAPIView):
 class CustomerDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = itw_customer.objects.all()
     serializer_class = CustomerSerializer
+
+class MyObtainTokenPairView(TokenObtainPairView):
+    permission_classes = (AllowAny,)
+    serializer_class = MyTokenObtainPairSerializer
