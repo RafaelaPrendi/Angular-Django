@@ -1,0 +1,12 @@
+<div *ngIf="order">
+  <h2>Order Details</h2>
+  <div><span>id: </span>{{order.id}}</div>
+  <div><span>Code:
+  <input [(ngModel)]="order.code">
+  </span>
+    <p>Date registered: {{order.date_registered | uppercase}} </p>
+    <p>Code_Year: {{order.code_year}}</p>
+    <p>Creator_ID: {{order.creator_id}}</p>
+    <p>Customer_ID: {{order.customer_id}}</p>
+  </div>
+</div>

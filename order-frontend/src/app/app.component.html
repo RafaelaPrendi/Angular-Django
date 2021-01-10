@@ -1,34 +1,10 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-    </button>
-    <h1>{{title}}</h1>
-    <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="'/accounts'"> Shites </a>
-      <a mat-button [routerLink]="'/create-account'"> Kliente </a>
-      <a mat-button [routerLink]="'/contacts'"> Produkte </a>
-      <a mat-button [routerLink]="'/create-contact'"> Porosi </a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<app-navbar></app-navbar>
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
-    <mat-nav-list>
-
-      <a mat-list-item [routerLink]="'/accounts'"> Shites </a>
-      <a mat-list-item [routerLink]="'/create-account'"> Kliente </a>
-      <a mat-list-item [routerLink]="'/contacts'"> Produkte </a>
-      <a mat-list-item [routerLink]="'/create-contact'"> Porosi </a>
-      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 88vh;">
-
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
+<mat-sidenav-content>
+  <div style="height: 88vh;">
+    <app-customers></app-customers>
+    <app-messages></app-messages>
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-content>
 </mat-sidenav-container>

@@ -11,24 +11,33 @@ import { MatIconModule} from "@angular/material/icon";
 import { MatSidenavModule} from "@angular/material/sidenav";
 import { MatListModule} from "@angular/material/list";
 import { MatButtonModule} from "@angular/material/button";
-import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { GroupListComponent } from './group-list/group-list.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CustomersComponent } from './customers/customers.component';
+import { FormsModule } from '@angular/forms';
+import { MessagesComponent } from './messages/messages.component';
+import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CategoryComponent } from './category/category.component';
+import { OrderComponent } from './order/order.component';
+import { OrderDetailsComponent } from './order-details/order-details.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
     UserDetailsComponent,
-    GroupListComponent,
     GroupDetailsComponent,
-    CustomerListComponent,
     CustomerDetailsComponent,
     NavbarComponent,
+    CustomersComponent,
+    MessagesComponent,
+    ProductComponent,
+    ProductDetailsComponent,
+    CategoryComponent,
+    OrderComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +50,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatListModule,
     MatButtonModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

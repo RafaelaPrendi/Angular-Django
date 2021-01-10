@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MessageService} from "../services/message.service";
+import {UserService} from "../services/user.service";
+import {User} from "../interfaces/user";
 
 @Component({
   selector: 'app-user-details',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-
-  constructor() { }
-
+  users!: User[];
+  constructor(private messageService: MessageService,
+              private userService: UserService) { }
+getUsers(): void{
+    this.userService.getUsers()
+      //users => this.users =Array.of(users)
+      .subscribe(users => this.users = users);
+}
   ngOnInit(): void {
+    this.getUsers();
   }
-
 }

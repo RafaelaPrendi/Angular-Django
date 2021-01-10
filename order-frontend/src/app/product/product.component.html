@@ -1,0 +1,8 @@
+<h2>My products</h2>
+<!--<ul>-->
+<!--  <li *ngFor="let product of products" (click)="onSelect(product)">-->
+<!--    <span [class.mat-card]="">{{product.name}}</span>-->
+<!--  </li>-->
+<!--</ul>-->
+<!--<app-product-details [product]="selectedProduct"></app-product-details>-->
+<div *ngIf="products">{{products | json}}</div>
