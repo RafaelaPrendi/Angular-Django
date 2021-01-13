@@ -1,4 +1,4 @@
 from django.contrib import admin
 from .models import *
 # Register your models here.
-admin.site.register(itw_customer)
+admin.site.register(Customer)

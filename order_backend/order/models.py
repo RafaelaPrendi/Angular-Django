@@ -1,35 +1,61 @@
 from django.db import models
 from django.core.validators import MaxLengthValidator
 from django.contrib.auth.models import User
-from product.models import itw_product
-from agent.models import itw_customer
+from product.models import Product
+from agent.models import Customer
 
 
 # Create your models here.
-class itw_counter(models.Model):
+class Counter(models.Model):
     name = models.CharField(max_length=10)
     value = models.IntegerField(validators=[MaxLengthValidator(10)])
 
+    class Meta:
+        ordering = ['id']
+        verbose_name = 'counter'
+        db_table = 'itw_counter'
 
-class itw_order(models.Model):
-    code = models.IntegerField()
+    @staticmethod
+    def next_value(name):
+        try:
+            counter = Counter.objects.filter(name=name)[0]
+            counter.value += 1
+            counter.save()
+        except Counter.DoesNotExist:
+            counter = Counter.objects.create(name=name, value=1)
+            counter.save()
+        return counter
+
+
+class Order(models.Model):
+    code = models.IntegerField(null=True, blank=True)
     code_year = models.IntegerField()
     date_register = models.DateField()
-    # customer_id  one customer many orders
-    # one to many relationship -> foreign key
-    customer_id = models.ForeignKey(itw_customer, on_delete=models.CASCADE)
-    # creator_id one user many orders
+    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     creator_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    product = models.ManyToManyField(itw_product, through='itw_order_unit')
+    product = models.ManyToManyField(Product, through='OrderUnit')
 
     class Meta:
         ordering = ['id']
         verbose_name = 'order'
+        db_table = 'itw_order'
+
+    def save(self, *args, **kwargs):
+        name = "PO-" + str(self.code_year)
+        new_counter = Counter.next_value(name)
+        self.code = new_counter.value
+        super(Order, self).save(*args, **kwargs)
 
 
-class itw_order_unit(models.Model):
-    # intermediate model to a ManyToMany field
-    product = models.ForeignKey(itw_product, on_delete=models.CASCADE)
-    order = models.ForeignKey(itw_order, on_delete=models.CASCADE)
+# intermediate model to a ManyToMany field
+
+class OrderUnit(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    class Meta:
+        ordering = ['id']
+        verbose_name = 'Order Unit'
+        db_table = 'itw_order_unit'

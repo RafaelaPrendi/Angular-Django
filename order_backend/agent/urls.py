@@ -8,4 +8,5 @@ urlpatterns = [
     path('groups/<int:pk>', views.GroupDetails.as_view()),
     path('customers/', views.CustomerList.as_view()),
     path('customers/<int:pk>', views.CustomerDetails.as_view()),
+    path('auth/', views.MyObtainTokenPairView.as_view()),
 ]

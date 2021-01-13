@@ -134,11 +134,13 @@ REST_FRAMEWORK = {
     )
 }
 CORS_ALLOWED_ORIGINS = [
-    "https://www.test-cors.org",
+    'https://www.test-cors.org',
+    'http://localhost:4200',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'www.test-cors.org',
+    'https://localhost:4200',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
