@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from  '@angular/common/http';
-import {CUSTOMERS} from "../mock-data/mock-customers";
-import {Customer} from "../interfaces/customer";
+import {Customer} from "../models/customer";
 import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
 import { catchError, map, tap } from 'rxjs/operators';
 
-const baseUrl = 'http://127.0.0.1:8000/customers/';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-
+  private baseUrl = 'http://127.0.0.1:8000/customers/';
   constructor(private http: HttpClient,
               private messageService: MessageService) { }
 
@@ -25,7 +24,11 @@ export class CustomerService {
 
   getCustomers(): Observable<Customer[]>{
     this.messageService.add('CustomerService: fetched customers');
-    return this.http.get<Customer[]>(baseUrl)
+    return this.http.get<Customer[]>(this.baseUrl)
       .pipe(catchError(this.handleError<Customer[]>('getCustomers', [])));
+  }
+
+  create(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this.baseUrl, customer);
   }
 }

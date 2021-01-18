@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
 import { HttpClient} from "@angular/common/http";
-import {Order} from "../interfaces/order";
-import {ORDERS} from "../mock-data/mock-orders";
+import {Order} from "../models/order";
+
 
 @Injectable({
   providedIn: 'root'

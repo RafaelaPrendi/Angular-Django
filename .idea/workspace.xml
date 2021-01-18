@@ -1,71 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2e924644-1d81-47c7-9af2-9b8b28f48a51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/category/category.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/category/category.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/interfaces/category.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/interfaces/customer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/interfaces/order.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/interfaces/product.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/messages/messages.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/messages/messages.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/messages/messages.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/messages/messages.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-customers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-orders.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-products.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-users.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock_category.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-details/order-details.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-details/order-details.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-details/order-details.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-details/product-details.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-details/product-details.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-details/product-details.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-details/product-details.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/category.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/category.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/message.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/message.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/order.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/order.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/product.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/product.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-admin/board-admin.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-admin/board-admin.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-admin/board-admin.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-admin/board-admin.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-sales/board-sales.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-sales/board-sales.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-sales/board-sales.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/board-sales/board-sales.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/customer-form/customer-form.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/customer-form/customer-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/customer-form/customer-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/home/home.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/home/home.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/login/login.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-form/order-form.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-form/order-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-form/order-form.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/order-form/order-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-form/product-form.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-form/product-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-form/product-form.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/product-form/product-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/profile/profile.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/profile/profile.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/profile/profile.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/profile/profile.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/register/register.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/auth.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/profile.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/profile.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/token-storage.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/services/token-storage.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/user-form/user-form.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/user-form/user-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/user-form/user-form.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-frontend/src/app/user-form/user-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customer-details/customer-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customer-details/customer-details.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customer-details/customer-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customer-details/customer-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customer-list/customer-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/category/category.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customer-list/customer-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customer-list/customer-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/order-details/order-details.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customer-list/customer-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-list/group-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-list/group-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-list/group-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-list/group-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customers/customers.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-details/group-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/_helpers/auth.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-details/group-details.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-details/group-details.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/customer-form/customer-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/group-details/group-details.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/interfaces/category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/models/category.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/interfaces/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/models/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/interfaces/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/models/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/interfaces/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/models/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/interfaces/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-customers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-orders.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-products.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock-users.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/mock-data/mock_category.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/order-details/order-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/order-details/order-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/order/order.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/product-details/product-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/product-details/product-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/product/product.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/services/category.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/services/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/services/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/services/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/services/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/services/product.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-details/user-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/user-details/user-details.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-details/user-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/user-details/user-details.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-details/user-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/user-details/user-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-list/user-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/interfaces/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-list/user-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-list/user-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-frontend/src/app/category/category.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-frontend/src/app/user-list/user-list.component.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +129,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zbook 15\Web Dev projects\order_frontend\order-frontend\src\app\_helpers" />
       <recent name="C:\Users\Zbook 15\Web Dev projects\order_frontend\order-frontend\src\app\mock-data" />
       <recent name="C:\Users\Zbook 15\Web Dev projects\order_frontend\order-frontend\src\app\interfaces" />
       <recent name="C:\Users\Zbook 15\Web Dev projects\order_frontend\order-frontend\src\app\services" />
@@ -130,6 +154,14 @@
       <workItem from="1610125302191" duration="7541000" />
       <workItem from="1610184181195" duration="13258000" />
       <workItem from="1610305402060" duration="6865000" />
+      <workItem from="1610364066563" duration="4651000" />
+      <workItem from="1610390164625" duration="599000" />
+      <workItem from="1610455218440" duration="1026000" />
+      <workItem from="1610543177493" duration="2778000" />
+      <workItem from="1610643155485" duration="10849000" />
+      <workItem from="1610704449356" duration="24039000" />
+      <workItem from="1610789543758" duration="16326000" />
+      <workItem from="1610883044667" duration="2007000" />
     </task>
     <servers />
   </component>

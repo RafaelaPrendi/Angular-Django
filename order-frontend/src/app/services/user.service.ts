@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from  '@angular/common/http';
 import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
-import {User} from "../interfaces/user";
-import {USERS} from "../mock-data/mock-users";
-import {Customer} from "../interfaces/customer";
+import {User} from "../models/user";
+import {Customer} from "../models/customer";
 import { catchError, map, tap } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "../interfaces/product";
+import {Product} from "../models/product";
 import {MessageService} from "../services/message.service";
 import {ProductService} from "../services/product.service";
 
@@ -9,15 +9,19 @@ import {ProductService} from "../services/product.service";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  displayedColumns: string[] = ["ID", "Name", "Categories", "Default Price", "Description"];
 
-  products!: Product[];
+  products: Product[] = [];
   selectedProduct!: Product;
   constructor(private messageService: MessageService,
               private productService: ProductService) { }
 
   getProducts():void {
     this.productService.getProducts()
-      .subscribe(products =>this.products = products);
+      .subscribe(products =>{
+        this.products = products;
+        // console.log(JSON.stringify(this.products));
+      });
               }
   ngOnInit(): void {
     this.getProducts();

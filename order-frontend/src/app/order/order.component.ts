@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Order} from "../interfaces/order"
+import {Order} from "../models/order"
 import {OrderService} from "../services/order.service";
 import {MessageService} from "../services/message.service";
 
@@ -9,6 +9,7 @@ import {MessageService} from "../services/message.service";
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+  displayedColumns: string[] = ["ID", "Code", "Code_Year", "Date Registered","Products"];
   orders!: Order[];
   selectedOrder!: Order;
   constructor(private messageService: MessageService, private orderService:OrderService) { }

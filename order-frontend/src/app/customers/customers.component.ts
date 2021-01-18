@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Customer} from "../interfaces/customer";
-import { CUSTOMERS} from "../mock-data/mock-customers";
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import {Customer} from "../models/customer";
 import { CustomerService } from "../services/customer.service";
 import { MessageService } from "../services/message.service";
 
@@ -10,9 +9,10 @@ import { MessageService } from "../services/message.service";
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-
+  displayedColumns: string[] = ["ID", "First Name", "Last Name", "Company Name"];
   customers!: Customer[];
   selectedCustomer!: Customer;
+
   constructor(private customerService: CustomerService,
               private messageService: MessageService) {
 
