@@ -49,6 +49,7 @@ class IsSalesUser(permissions.BasePermission):
         group_permission = has_group_permission(request.user, self.required_groups)
         return request.user and group_permission
 
+
 class IsAdminOrSalesUser(permissions.BasePermission):
     required_groups = ['Administrator', 'Shites']
 

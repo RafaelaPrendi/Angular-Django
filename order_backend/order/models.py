@@ -29,11 +29,12 @@ class Counter(models.Model):
 
 class Order(models.Model):
     code = models.IntegerField(null=True, blank=True)
-    code_year = models.IntegerField()
+    code_year = models.IntegerField(null=True, blank=True)
     date_register = models.DateField()
-    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    creator_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    product = models.ManyToManyField(Product, through='OrderUnit')
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+    # product = models.ManyToManyField(Product, through='OrderUnit')
 
     class Meta:
         ordering = ['id']
@@ -41,6 +42,7 @@ class Order(models.Model):
         db_table = 'itw_order'
 
     def save(self, *args, **kwargs):
+        self.code_year = self.date_register.strftime('%Y')
         name = "PO-" + str(self.code_year)
         new_counter = Counter.next_value(name)
         self.code = new_counter.value
@@ -48,10 +50,9 @@ class Order(models.Model):
 
 
 # intermediate model to a ManyToMany field
-
 class OrderUnit(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product')
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order_units')
     amount = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
 

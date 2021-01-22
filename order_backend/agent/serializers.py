@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from .permission import IsAdminOrSalesUser, IsAdminUser, IsLoggedInUserOrAdmin, IsSalesUser
@@ -7,54 +8,56 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
 class GroupSerializer(ModelSerializer):
-    id = serializers.IntegerField()
+    # id = serializers.IntegerField()
 
     class Meta:
         model = Group
-        # fields = ['id', 'name', 'permissions']
-        fields = '__all__'
+        fields = ['id', 'name']
         extra_kwargs = {
             'name': {'validators': []},
         }
 
 
 class UserSerializer(ModelSerializer):
-    id = serializers.CharField()
-    username = serializers.CharField()
-    password = serializers.CharField()
-    groups = GroupSerializer(many=True, read_only=False)
-
+    # id = serializers.CharField()
+    # username = serializers.CharField()
+    # groups = GroupSerializer(many=True, read_only=False)
+    group_names = SerializerMethodField()
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'password', 'groups']
+        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'groups', 'group_names']
         depth = 1
 
-    def create(self, validated_data):
-        groups_data = validated_data.pop('groups')
-        new_user = User.objects.create(**validated_data)
-        for group in groups_data:
-            gr = Group.objects.get(pk=group.get('id'))
-            new_user.groups.add(gr)
-        return new_user
+    def get_group_names(self, user):
+        group_names = []
+        for group in user.groups.all():
+            group_names.append(group.name)
+        return group_names
 
-    def update(self, instance, validated_data):
-        groups_data = validated_data.pop('groups')
-        instance.username = validated_data.get('username', instance.username)
-        instance.password = validated_data.get('password', instance.password)
-        # remove old group
-        old_groups = instance.groups.all()
-        for gr in old_groups:
-            instance.groups.remove(gr)
-            instance.save()
-        # add new groups
-        for group in groups_data:
-            gr = Group.objects.get(pk=group.get('id'))
-            instance.groups.add(gr)
-            instance.save()
-        return instance
-
-
+    # def create(self, validated_data):
+    #     groups_data = validated_data.pop('groups')
+    #     new_user = User.objects.create(**validated_data)
+    #     for group in groups_data:
+    #         gr = Group.objects.get(name=group.get('name'))
+    #         new_user.groups.add(gr)
+    #     return new_user
+    #
+    # def update(self, instance, validated_data):
+    #     groups_data = validated_data.pop('groups')
+    #     instance.username = validated_data.get('username', instance.username)
+    #     instance.password = validated_data.get('password', instance.password)
+    #     # remove old group
+    #     old_groups = instance.groups.all()
+    #     for gr in old_groups:
+    #         instance.groups.remove(gr)
+    #         instance.save()
+    #     # add new groups
+    #     for group in groups_data:
+    #         gr = Group.objects.get(pk=group.get('id'))
+    #         instance.groups.add(gr)
+    #         instance.save()
+    #     return instance
 
     def get_permissions(self):
         permission_classes = []

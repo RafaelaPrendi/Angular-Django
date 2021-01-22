@@ -1,7 +1,9 @@
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.response import Response
+
 from .serializers import CounterSerializer, OrderSerializer, OrderUnitSerializer
 from .models import *
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 
 # Create your views here.
@@ -13,9 +15,10 @@ class OrderList(generics.ListCreateAPIView):
 
 
 class OrderDetails(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Order.objects.all()
+    queryset = Order.objects.all().filter()
     serializer_class = OrderSerializer
     paginator = None
+    permission_classes = [AllowAny]
 
 
 class OrderUnitList(generics.RetrieveUpdateDestroyAPIView):
