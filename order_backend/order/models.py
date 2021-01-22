@@ -31,10 +31,8 @@ class Order(models.Model):
     code = models.IntegerField(null=True, blank=True)
     code_year = models.IntegerField(null=True, blank=True)
     date_register = models.DateField()
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
     creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-
-    # product = models.ManyToManyField(Product, through='OrderUnit')
 
     class Meta:
         ordering = ['id']
