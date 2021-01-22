@@ -34,7 +34,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         # customer_data = validated_data.pop('customer_id')
-        # product_data = validated_data.pop('product')
         ou_data = validated_data.pop('order_units')
         validated_data['creator'] = self.context['request'].user
         # validated_data['creator'] = customer_data
