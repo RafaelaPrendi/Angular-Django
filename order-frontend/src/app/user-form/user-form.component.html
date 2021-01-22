@@ -1,1 +1,76 @@
-<p>user-form works!</p>
+<div *ngIf="!submitted; else forminfo" class="container" novalidate>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form">
+
+    <mat-form-field class="form-element">
+      <input formControlName="username" matInput placeholder="Username: ">
+      <mat-error *ngIf="!formGroup.controls['username'].valid && formGroup.controls['username'].touched">
+        Required field, must be between 2 and 20 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="first_name" matInput placeholder="First Name: ">
+      <mat-error *ngIf="!formGroup.controls['first_name'].valid && formGroup.controls['first_name'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="last_name" matInput placeholder="Last Name: ">
+      <mat-error *ngIf="!formGroup.controls['last_name'].valid && formGroup.controls['last_name'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="email" matInput placeholder="email">
+      <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-element">
+      <label>
+        Group:
+        <mat-select formControlName="groups">
+          <mat-option *ngFor="let group of groups" [value]="group.id">
+            {{group.name}}</mat-option>
+        </mat-select>
+      </label>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="password" matInput placeholder="password" type="password">
+      <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field *ngIf="!isUpdated" class="form-element">
+      <input formControlName="confirm_password" matInput placeholder="confirm password" type="password">
+      <mat-error
+        *ngIf="!formGroup.controls['confirm_password'].valid && formGroup.controls['confirm_password'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+
+    <div class="form-element">
+      <button (click)="rebuildForm()" *ngIf="!isUpdated" class="button" color="accent" mat-button type="button">Reset
+        Fields
+      </button>
+    </div>
+
+    <div class="form-element">
+      <!--      [disabled]="formGroup.invalid"-->
+      <button class="button" color="primary" mat-raised-button type="submit">Submit
+        Form
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="container">
+    {{ formGroup.value | json }}
+  </div>
+</ng-template>

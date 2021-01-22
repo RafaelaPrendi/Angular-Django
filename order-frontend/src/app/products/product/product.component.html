@@ -1,0 +1,48 @@
+<hr>
+<button (click)="add()" color="primary" mat-icon-button type="button">
+  <mat-icon>add_box</mat-icon>
+  New Product
+</button>
+<table [dataSource]="products" class="mat-elevation-z8" mat-table>
+  <ng-container matColumnDef="ID">
+    <th *matHeaderCellDef mat-header-cell>ID</th>
+    <td *matCellDef="let product" mat-cell>{{product.id}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Name">
+    <th *matHeaderCellDef mat-header-cell>Name</th>
+    <td *matCellDef="let product" mat-cell>{{product.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Categories">
+    <th *matHeaderCellDef mat-header-cell>Categories</th>
+    <td *matCellDef="let product" mat-cell>
+      {{product.category_names}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Default Price">
+    <th *matHeaderCellDef mat-header-cell>Default Price</th>
+    <td *matCellDef="let product" mat-cell>{{product.default_price}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Description">
+    <th *matHeaderCellDef mat-header-cell>Description</th>
+    <td *matCellDef="let product" mat-cell>{{product.description}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th *matHeaderCellDef mat-header-cell> Action</th>
+    <td *matCellDef="let row" class="action-link" mat-cell>
+      <button (click)="edit(row)" color="accent" mat-icon-button type="button">
+        <mat-icon>create</mat-icon>
+      </button>
+      <button (click)="delete(row)" color="accent" mat-icon-button type="button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr (click)="onSelect(row)" *matRowDef="let row; columns: displayedColumns" [class.selected]="row === selectedProduct"
+      mat-row></tr>
+</table>
+<app-product-details [product]="selectedProduct"></app-product-details>

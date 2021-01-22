@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../services/profile.service';
+import {Component, OnInit} from '@angular/core';
+import {ProfileService} from '../services/profile.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,17 +8,19 @@ import { ProfileService } from '../services/profile.service';
 })
 export class HomeComponent implements OnInit {
   content?: string;
-  constructor(private profileService: ProfileService) { }
+
+  constructor(private profileService: ProfileService) {
+  }
 
   ngOnInit(): void {
-    this.profileService.getPublicContent().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      }
-    );
+    // this.profileService.getPublicContent().subscribe(
+    //   data => {
+    //     this.content = data;
+    //   },
+    //   err => {
+    //     console.log(err);
+    //   }
+    // );
   }
 
 

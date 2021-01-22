@@ -1,0 +1,80 @@
+<div *ngIf="!submitted; else forminfo" class="container" fxFlex="100" fxLayout="row" novalidate>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form">
+    <mat-form-field appearance="fill" class="form-element">
+      <mat-label>Choose a date</mat-label>
+      <input [matDatepicker]="picker" formControlName="date_register" matInput>
+      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-element">
+      <label>
+        Customer:
+        <mat-select formControlName="customer_id">
+          <mat-option *ngFor="let customer of customers" [value]="customer.id">
+            {{customer.first_name}} {{customer.last_name}}</mat-option>
+        </mat-select>
+      </label>
+    </mat-form-field>
+    <!--    OU  -->
+
+    <label>Order Unit: </label>
+    <button (click)="addOrderUnit()" color="warn" mat-icon-button>
+      <mat-icon>add_box</mat-icon>
+    </button>
+    <div class="form-element" formArrayName="order_units" fxLayout="row">
+      <!--    PRODUCT -->
+      <div class="form-element">
+        <table class="mat-elevation-z8">
+          <tr>
+            <th>Product:</th>
+            <th>Price:</th>
+            <th>Amount:</th>
+            <th>Total:</th>
+            <th>Remove</th>
+          </tr>
+          <tr *ngFor="let ouFG of OrderUnitFormArray.controls; let i = index" [formGroupName]="i">
+            <td>
+              <mat-select formControlName="product">
+                <mat-option *ngFor="let product of products" [value]="product.id">
+                  <div (click)="selectProduct(product)"
+                       [class.selected]="product === selectedProduct">{{product.name}}: {{product.default_price}} $
+                  </div>
+                </mat-option>
+              </mat-select>
+            </td>
+            <td><input *ngIf="selectedProduct; else zeroPrice" [valueAsNumber]="selectedProduct.default_price"
+                       class="OUinput" formControlName="price" matInput
+                       type="number">
+              <ng-template #zeroPrice></ng-template>
+            </td>
+            <td><input class="OUinput" formControlName="amount" matInput type="number"></td>
+            <td><input class="total" disabled matInput type="number">{{ouFG.value.price * ouFG.value.amount}} $</td>
+            <td>
+              <button (click)="removeOrderUnit(i)" color="warn" mat-icon-button>
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="form-element">
+      <button (click)="show()" *ngIf="!isUpdated" class="button" color="accent" mat-button type="button">Reset Fields
+      </button>
+    </div>
+
+    <div class="form-element">
+      <!--      [disabled]="!formGroup.valid"-->
+      <button class="button" color="primary" mat-raised-button type="submit">Submit Form</button>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="container">
+    <!--    {{ formGroup.value | json }}-->
+  </div>
+</ng-template>
+

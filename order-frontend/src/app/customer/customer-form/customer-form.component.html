@@ -1,0 +1,39 @@
+<div *ngIf="!submitted; else forminfo" class="container" novalidate>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form">
+
+    <mat-form-field class="form-element">
+      <input formControlName="first_name" matInput placeholder="First Name: ">
+      <mat-error *ngIf="!formGroup.controls['first_name'].valid && formGroup.controls['first_name'].touched">
+        Required field, must be between 2 and 20 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="last_name" matInput placeholder="Last Name: ">
+      <mat-error *ngIf="!formGroup.controls['last_name'].valid && formGroup.controls['last_name'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <input formControlName="company_name" matInput placeholder="Company">
+      <mat-error *ngIf="!formGroup.controls['company_name'].valid && formGroup.controls['company_name'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+    <div class="form-element">
+      <button (click)="rebuildForm()" *ngIf="!isUpdated" class="button" color="accent" mat-button type="button">Reset
+        Fields
+      </button>
+    </div>
+    <div class="form-element">
+      <button [disabled]="formGroup.invalid" class="button" color="primary" mat-raised-button type="submit">Submit
+        Form
+      </button>
+    </div>
+  </form>
+</div>
+<ng-template #forminfo>
+  <div class="container">
+    {{ formGroup.value | json }}
+  </div>
+</ng-template>

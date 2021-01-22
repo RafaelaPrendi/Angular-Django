@@ -1,6 +1,10 @@
-export interface User{
+export interface User {
   id: number;
   username: string;
   email: string;
-  groups: string;
+  first_name: string;
+  last_name: string;
+  password: string;
+  groups: [];
+  group_names: [];
 }

@@ -1,0 +1,45 @@
+<button (click)="add()" color="primary" mat-icon-button type="button">
+  <mat-icon>add_box</mat-icon>
+  New Customer
+</button>
+
+<table [dataSource]="customers" class="mat-elevation-z8" mat-table>
+
+  <ng-container matColumnDef="ID">
+    <th *matHeaderCellDef mat-header-cell>ID</th>
+    <td *matCellDef="let customer" mat-cell>{{customer.id}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="First Name">
+    <th *matHeaderCellDef mat-header-cell>First Name</th>
+    <td *matCellDef="let customer" mat-cell>{{customer.first_name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Last Name">
+    <th *matHeaderCellDef mat-header-cell>Last Name</th>
+    <td *matCellDef="let customer" mat-cell>{{customer.last_name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Company Name">
+    <th *matHeaderCellDef mat-header-cell>Company Name</th>
+    <td *matCellDef="let customer" mat-cell>{{customer.company_name}}</td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th *matHeaderCellDef mat-header-cell> Action</th>
+    <td *matCellDef="let row" class="action-link" mat-cell>
+      <button (click)="edit(row)" color="accent" mat-icon-button type="button">
+        <mat-icon>create</mat-icon>
+      </button>
+      <button (click)="delete(row)" color="accent" mat-icon-button type="button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr (click)="onSelect(row)" *matRowDef="let row; columns: displayedColumns" [class.selected]="row === selectedCustomer"
+      mat-row></tr>
+</table>
+
+<!--<app-customer-details [customer]="selectedCustomer"></app-customer-details>-->
+<!--<app-customer-form [customer]="selectedCustomer"></app-customer-form>-->

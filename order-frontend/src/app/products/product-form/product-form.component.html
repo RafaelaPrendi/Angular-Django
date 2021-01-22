@@ -1,0 +1,44 @@
+<div *ngIf="!submitted; else forminfo" class="container" novalidate>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form" method="post">
+    <mat-form-field class="form-element">
+      <input formControlName="name" matInput placeholder="name">
+      <mat-error *ngIf="!formGroup.controls['name'].valid && formGroup.controls['name'].touched">
+        Required field, must be between 2 and 20 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="default_price" matInput placeholder="default_price">
+      <mat-error *ngIf="!formGroup.controls['default_price'].valid && formGroup.controls['default_price'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input formControlName="description" matInput placeholder="description">
+      <mat-error *ngIf="!formGroup.controls['description'].valid && formGroup.controls['description'].touched">
+        Required field.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-element">
+      <label>
+        Category:
+        <mat-select [multiple]="true" formControlName="categories">
+          <mat-option *ngFor="let category of categoryList" [value]="category.id">
+            {{category.name}}</mat-option>
+        </mat-select>
+      </label>
+    </mat-form-field>
+    <div class="form-element">
+      <button [disabled]="!formGroup.valid" class="button" color="primary" mat-raised-button type="submit">Submit Form
+      </button>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="container">
+    {{ formGroup.value | json }}
+  </div>
+</ng-template>

@@ -1,5 +1,15 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div class="container" fxFlex.lg="row">
+  <mat-card flex-gt-sm>
+    <mat-card-title>Order Manager</mat-card-title>
+    <mat-card-subtitle> Managing System</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      Manage clients, orders and sales easily.
+    </mat-card-content>
+    <mat-card-actions>
+      <button [routerLink]="'/login'" class="text-upper" color="accent" mat-button>Login</button>
+      <button [routerLink]="'/register'" class="text-upper" mat-button>Sign Up</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
+

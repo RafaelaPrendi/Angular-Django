@@ -1,0 +1,31 @@
+<div *ngIf="order" [style.margin-top]="'12px'" fxLayout="row" fxLayoutGap="12px">
+  <mat-card class="example-card mat-elevation-z8">
+    <mat-card-header>
+      <div class="example-header-image" mat-card-avatar></div>
+      <mat-card-title>Order Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>id: {{order.id}}</p>
+      <hr>
+      <p>Code: {{order.code_year}} </p>
+      <hr>
+      <p>
+        <mat-icon>today</mat-icon>
+        Date Registered: {{order.date_register}}</p>
+      <hr>
+      <p>
+        <mat-icon>person</mat-icon>
+        Customer: {{order.customer_name}}</p>
+      <hr>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [routerLink]="['/orders']" color="accent" mat-icon-button type="button">
+        <mat-icon>reply</mat-icon>
+      </button>
+      <button [routerLink]="['/orders', order.id]" color="accent" mat-icon-button type="button">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
