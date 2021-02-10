@@ -34,25 +34,25 @@
             <th>Remove</th>
           </tr>
           <tr *ngFor="let ouFG of OrderUnitFormArray.controls; let i = index" [formGroupName]="i">
-            <td>
+            <td class="select-product">
               <mat-select formControlName="product" class="select">
                 <mat-option *ngFor="let product of products" [value]="product.id">
-<!--                  <div (click)="selectProduct(product)"-->
-<!--                       [class.selected]="product === selectedProduct">{{product.name}}: {{product.default_price}} $-->
-<!--                  </div>-->
+                  <!--                  <div (click)="selectProduct(product)"-->
+                  <!--                       [class.selected]="product === selectedProduct">{{product.name}}: {{product.default_price}} $-->
+                  <!--                  </div>-->
                   {{product.name}}: {{product.default_price}} $
                 </mat-option>
               </mat-select>
             </td>
             <td>
-<!--              <input *ngIf="selectedProduct; else zeroPrice" [valueAsNumber]="selectedProduct.default_price"-->
-<!--                       class="OUinput" formControlName="price" matInput-->
-<!--                       type="number">-->
-<!--              <ng-template #zeroPrice></ng-template>-->
+              <!--              <input *ngIf="selectedProduct; else zeroPrice" [valueAsNumber]="selectedProduct.default_price"-->
+              <!--                       class="OUinput" formControlName="price" matInput-->
+              <!--                       type="number">-->
+              <!--              <ng-template #zeroPrice></ng-template>-->
               <input matInput class="OUinput" formControlName="price" type="number">
             </td>
             <td><input class="OUinput" formControlName="amount" matInput type="number"></td>
-            <td><input class="total" disabled matInput type="number">{{ouFG.value.price * ouFG.value.amount}} $</td>
+            <td><input class="OUinput" disabled matInput type="number" value="{{ouFG.value.price * ouFG.value.amount}}"></td>
             <td>
               <button (click)="removeOrderUnit(i)" color="warn" mat-icon-button>
                 <mat-icon>delete</mat-icon>

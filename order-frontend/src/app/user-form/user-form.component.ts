@@ -123,4 +123,10 @@ export class UserFormComponent implements OnInit {
       }
     }
   }
+
+  show(){
+    this.new_user = this.createUser();
+    console.log(this.new_user);
+    console.log(this.new_user.groups);
+  }
 }

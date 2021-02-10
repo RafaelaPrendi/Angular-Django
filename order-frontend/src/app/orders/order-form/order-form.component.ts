@@ -93,6 +93,7 @@ export class OrderFormComponent implements OnInit {
       customer_id: [null, Validators.required],
       order_units: this.formBuilder.array([]),
     });
+
     this.current_order_id = Number(this.activatedRouter.snapshot.paramMap.get('id'));
     if (this.current_order_id) {
       this.isUpdated = true;
@@ -106,7 +107,8 @@ export class OrderFormComponent implements OnInit {
         error => {
           console.log(error);
         });
-    } else {
+    }
+    else {
       this.addOrderUnit();
     }
   }
@@ -145,7 +147,8 @@ export class OrderFormComponent implements OnInit {
           console.log(error);
         }
       );
-    } else {
+    }
+    else {
       this.new_order = this.formGroup.value;
       this.formatDate(this.new_order);
       console.log('NEW ORDER', this.new_order);
