@@ -1,3 +1,5 @@
+from abc import ABC
+
 from django.contrib.auth.models import User, Group
 from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
@@ -19,15 +21,11 @@ class GroupSerializer(ModelSerializer):
 
 
 class UserSerializer(ModelSerializer):
-    # id = serializers.CharField()
-    # username = serializers.CharField()
-    # groups = GroupSerializer(many=True, read_only=False)
     group_names = SerializerMethodField()
 
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'email', 'groups', 'group_names']
-        depth = 1
 
     def get_group_names(self, user):
         group_names = []
@@ -35,14 +33,17 @@ class UserSerializer(ModelSerializer):
             group_names.append(group.name)
         return group_names
 
-    # def create(self, validated_data):
-    #     groups_data = validated_data.pop('groups')
-    #     new_user = User.objects.create(**validated_data)
-    #     for group in groups_data:
-    #         gr = Group.objects.get(name=group.get('name'))
-    #         new_user.groups.add(gr)
-    #     return new_user
-    #
+    def create(self, validated_data):
+        passw = validated_data.pop('password')
+        new_user = User.objects.create(**validated_data)
+        new_user.set_password(raw_password=passw)
+
+        groups_data = validated_data['groups']
+        for group in groups_data:
+            gr = Group.objects.get(pk=group.get('id'))
+            new_user.groups.add(gr)
+        return new_user
+
     # def update(self, instance, validated_data):
     #     groups_data = validated_data.pop('groups')
     #     instance.username = validated_data.get('username', instance.username)
@@ -79,7 +80,6 @@ class CustomerSerializer(ModelSerializer):
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
-
     @classmethod
     def get_token(cls, user):
         token = super(MyTokenObtainPairSerializer, cls).get_token(user)

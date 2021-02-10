@@ -33,10 +33,8 @@ class OrderSerializer(serializers.ModelSerializer):
         return order.customer.__str__()
 
     def create(self, validated_data):
-        # customer_data = validated_data.pop('customer_id')
         ou_data = validated_data.pop('order_units')
         validated_data['creator'] = self.context['request'].user
-        # validated_data['creator'] = customer_data
         new_order = Order.objects.create(**validated_data)
 
         # customer = Customer.objects.get(pk=customer_data.get('id'))
